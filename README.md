@@ -5,17 +5,17 @@
 
 ---
 
-GeoFetchr is a Python package that helps you easily search, filter, fetch metadata, and download datasets from the NCBI Gene Expression Omnibus (GEO) database. It provides functions to quickly explore GEO datasets by **keywords**, **organism**, **assay type**, **accession IDs**, and to **download GEO Family files** for visualization and using it.
+GeoFetchr is a Python package that helps you easily search, filter, fetch metadata, and download datasets from the NCBI Gene Expression Omnibus (GEO) database. It provides functions to quickly explore GEO datasets by **keywords**, **organism**, **assay type**, **accession IDs**, and to **download GEO Family files**.
 
-# GeoFetchr core functionality :
+# Why use GeoFetchr
 
-- The package can search GEO data for datasets based on provided keywords and display the top organisms associated with those keywords and the counts of GDS, GPL, and GSE results.
-- It can group the search results by organism and display the number of datasets for each category (GDS, GPL, GSE) within the selected organisms.
+- This package can search GEO data for datasets based on provided keywords and display the top organisms associated with those keywords and the counts of GDS, GPL, and GSE results.
+- It can group the search results by top organisms and display the number of datasets for each category (GDS, GPL, GSE) within the selected organisms.
 - It can provide details for each dataset, including the dataset link, PubMed links (if available), and the assay type.
 - It can filter the grouped results by assay type and list the datasets matching the selected assay type.
 - It supports multi-keyword searching and can display results for multiple organisms and assay types.
-- It can provide metadata for a given GEO ID (GSE, GDS, or GPL), including title, accession, status, submission date, summary, overall design, type, contributors, sample IDs, contact 
-  information, supplementary files, platform details, and related projects (BioProject, SRA).
+- It can provide detail metadata for a given GEO ID (GSE, GDS, or GPL), including title, accession, status, submission date, summary, overall design, type, contributors, sample IDs, 
+  contact information, supplementary files, platform details, and related projects (BioProject, SRA).
 - It can download GEO Family files for a given GEO ID, including series matrix, family XML, family soft, and raw data files.
 
 ---
@@ -44,7 +44,7 @@ pip install geofetchr
 
 ## Usage Examples
 
-**Try out this demo! Enter your input, and the code will automatically call the package functions to generate a organized, well-formatted output**
+**Try out this demo! Enter your input, and the code will automatically call the package functions to generate a organized, well-formatted output.**
 
 ### 1. Keyword Search
 Search GEO datasets by keyword(s), and display organism counts and dataset counts.
@@ -129,9 +129,12 @@ Sample output:
 GDS: 0 results
 GPL: 0 results
 GSE: 46 results
-GSE279773 - Dataset: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279773
-PubMed: https://pubmed.ncbi.nlm.nih.gov/39832654
+
+GSE279773 - Dataset: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279773 - PubMed: https://pubmed.ncbi.nlm.nih.gov/39832654
 Assay Type: Expression profiling by array
+
+GSE162148 - Dataset: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE162148 - PubMed: https://pubmed.ncbi.nlm.nih.gov/34140474 
+Assay Type: Expression profiling by high throughput sequencing, Genome binding/occupancy profiling by high throughput sequencing, Non-coding RNA profiling by high throughput sequencing
 ```
 
 ---
@@ -162,6 +165,7 @@ Sample output:
 🔹 Available Assay Types:
 Expression profiling by high throughput sequencing: 29 datasets
 Expression profiling by array: 6 datasets
+Expression profiling by array, Non-coding RNA profiling by array: 1 datasets
 
 🔹 Datasets with Assay Type 'Expression profiling by high throughput sequencing':
 GSE281891 (rattus norvegicus) - Dataset: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE281891
@@ -195,11 +199,32 @@ Sample output:
 ```
 🔹 Metadata for GSE108484:
 title: ['Transcriptome analysis of Chrdl1-treated RGCs']
+geo_accession: ['GSE108484']
 status: ['Public on Oct 29 2018']
+submission_date: ['Dec 23 2017']
+last_update_date: ['Mar 28 2022']
 pubmed_id: ['30344043']
-summary: ['Chrdl1 treatment promotes formation of synapses...']
+summary: ['Chrdl1 treatment promotes formation of synapses and GluA2-AMPAR recruitment in Retinal ganglion cell (RGC) cultures. Analysis of the transcriptome of RGCs with or without Chrdl1 treatment let us determine potential alterations in the expression of genes related to BMP signaling, or genes involved in excitatory synaptogenesis and AMPAR trafficking.']
+overall_design: ['RNA was isolated from RGC cultures treated for 12 hours with 1ug/ml Chrdl1, and compared to RNA isolated from buffer-treated (vehicle) RGCs as a control.']
 type: ['Expression profiling by high throughput sequencing']
+contributor: ['Elena,,Blanco-Suarez', 'Maxim,N,Shokhirev', 'Nicola,,Allen']
+sample_id: ['GSM2901408', 'GSM2901409', 'GSM2901410', 'GSM2901411', 'GSM2901412', 'GSM2901413']
+contact_name: ['April,Elizabeth,Williams']
+contact_email: ['apriljack06@gmail.com, awilliams@salk.edu']
+contact_phone: ['7345461645']
+contact_department: ['IGC']
 contact_institute: ['Salk Institute for Biological Studies']
+contact_address: ['10010 N Torrey Pines Rd']
+contact_city: ['San Diego']
+contact_state: ['California']
+contact_zip/postal_code: ['92037']
+contact_country: ['USA']
+supplementary_file: ['ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE108nnn/GSE108484/suppl/GSE108484_fpkm_rat.txt.gz']
+platform_id: ['GPL18694']
+platform_taxid: ['10116']
+sample_taxid: ['10116']
+relation: ['BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA427397', 'SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRP127490']
+
 ```
 
 ---
