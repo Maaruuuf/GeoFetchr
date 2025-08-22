@@ -44,7 +44,7 @@ pip install geofetchr
 
 ## Usage Examples
 
-**Try out this demo! Enter your input, and the code will automatically call the package functions to generate a neatly organized, visualized out**
+**Try out this demo! Enter your input, and the code will automatically call the package functions to generate a organized, well-formatted output**
 
 ### 1. Keyword Search
 Search GEO datasets by keyword(s), and display organism counts and dataset counts.
